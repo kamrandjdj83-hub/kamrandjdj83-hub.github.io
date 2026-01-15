@@ -1,0 +1,60 @@
+<script>
+  const music = document.getElementById("music");
+  const startBtn = document.querySelector(".start");
+  const yesBtn = document.querySelector(".yes");
+  const noBtn = document.querySelector(".no");
+  const title = document.getElementById("title");
+
+  const texts = [
+    "Are you sure? 😭", "Pleaseeee 🥺", "Don't do this 💔", "Think again 😔",
+    "Last chance 😢", "You can't say no! 😱", "I’ll cry 😭", "Come on… 🥺",
+    "Just one yes? 💖", "I’m begging 😭", "Pretty please 🥺", "I promise hugs 🤗",
+    "I’ll buy you chocolate 🍫", "I’ll do your homework 📚", "You love me deep down 😏",
+    "You know it’s true 💕", "Imagine us together 🌸", "I’ll be extra nice 😇",
+    "I’ll cook for you 🍲", "You can’t escape 💌", "I’ll make memes for you 😂",
+    "No, really, think again 😢", "I’ll write a poem ✍️", "You’ll regret it 😭",
+    "I’ll sing to you 🎤", "I’ll buy flowers 🌹", "I’ll give you my hoodie 🧥",
+    "I’ll watch your favorite show 📺", "I’ll walk your dog 🐶", "I’ll dance for you 💃",
+    "I’ll be your human pillow 😴", "I’ll listen to all your rants 😌", "I’ll text you all day 📱",
+    "I’ll take cute selfies with you 🤳", "I’ll compliment you forever 💖", "You can’t leave me 😭",
+    "You know you want to 💕", "I’ll be your Valentine forever 💍", "I’ll share my snacks 🍿",
+    "I’ll protect you always 🛡️", "I’ll give you ice cream 🍦", "I’ll buy matching gifts 🎁",
+    "I’ll learn your favorite song 🎶", "I’ll write your name in the sky ☁️", "I’ll make you laugh 😂",
+    "I’ll cheer you up 🌞", "I’ll hug you tight 🤗", "I’ll never stop loving you ❤️",
+    "I’ll tell everyone you’re mine 😏", "I’ll draw your portrait 🎨", "I’ll remember every date 📅",
+    "I’ll make our love a story 📖", "I’ll make your favorite cake 🎂", "I’ll learn your favorite dance 🕺",
+    "I’ll be your personal playlist 🎧", "I’ll carry your bags 👜", "I’ll be your sunshine 🌞",
+    "I’ll send you heart emojis 💌", "I’ll take care of you always 🫶", "I’ll never give up on you 💖",
+    "I’ll be your hero 🦸", "I’ll make every day special 🌹", "I’ll cherish you forever 💍",
+    "I’ll be silly just for you 😜", "I’ll love you more than anything ❤️", "I’ll be your Valentine today and always 💕"
+  ];
+
+  let i = 0;
+
+  function startLove() {
+    music.play();
+    startBtn.style.display = "none";
+    yesBtn.style.display = "inline-block";
+    noBtn.style.display = "inline-block";
+    title.innerText = "Maram, will you be my Valentine? 💝";
+  }
+
+  function noClick() {
+    noBtn.innerText = texts[i];
+    i = (i + 1) % texts.length;
+
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 120);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    // Yes button grows
+    let size = parseFloat(getComputedStyle(yesBtn).fontSize);
+    yesBtn.style.fontSize = (size + 8) + "px";
+  }
+
+  function yesClick() {
+    window.location.href = "yes.html";
+  }
+    </script>
