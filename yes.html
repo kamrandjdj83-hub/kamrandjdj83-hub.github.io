@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Us 💖</title>
+
+<style>
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  color:white;
+  text-align:center;
+  font-family:system-ui;
+}
+.join{
+  display:flex;
+  gap:120px;
+  font-size:3rem;
+  animation:join 2.5s ease forwards;
+}
+@keyframes join{
+  to{gap:12px}
+}
+.heart{
+  animation:beat 1.2s infinite;
+}
+@keyframes beat{
+  50%{transform:scale(1.2)}
+}
+p{margin-top:16px;opacity:.9}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="m.mp3" type="audio/mpeg">
+</audio>
+
+<div>
+  <div class="join">
+    <span>K</span>
+    <span class="heart">💖</span>
+    <span>M</span>
+  </div>
+
+  <h2>You chose yes</h2>
+  <p>Two hearts didn’t rush<br>They just found each other</p>
+  <p>— Kamran</p>
+</div>
+
+<script>
+if(localStorage.getItem("playMusic")==="yes"){
+  document.getElementById("music").play();
+}
+</script>
+
+</body>
+</html>
